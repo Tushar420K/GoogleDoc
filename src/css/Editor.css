@@ -1,14 +1,23 @@
 .toolbar-container{
+    width: 97%;
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    margin: auto;
+    margin-block:  0.8rem;
+    padding-block: 0.3rem;
+    padding-inline: 0.5rem;
+    border-radius: 2% / 55%;
+    background: rgb(237,242,250);
+    overflow: hidden;
 }
 
 .toolbar-main{
     display:flex;
     flex-direction: row;
     align-items: center;
+    overflow: hidden;
     /* justify-content: space-evenly; */
 }
 
@@ -21,7 +30,8 @@
 }
 
 .toolbar-btn{
-    padding-inline: 0.3rem;
+    margin-inline: 0.1rem;
+    padding-inline: 0.4rem;
     padding-block: 0.15rem;
     /* margin-inline: 1px; */
     /* margin-top: 15px; */
@@ -29,12 +39,14 @@
 }
 
 .toolbar-btn:hover{
-    background: rgb(236, 235, 235);
+    background: rgb(211,227,253);
 }
 
 .container-right{
     display:flex;
     flex-direction: row;
+    padding-right: 0.5rem;
+    align-items: center;
 }
 
 .vbr{
@@ -64,7 +76,6 @@
 
 #btn-down-3{
     padding-right: 0rem;
-    width: fit-content;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -78,3 +89,28 @@
 #btn-down-2 p{
     margin-right: 0.5rem;
 }
+
+#plus{
+    margin: 0rem;
+    padding: 0.2rem;
+}
+
+#minus{
+    margin: 0rem;
+    padding: 0.2rem;
+}
+
+.fontsize{
+    margin-inline: 0.2rem;
+    width:30px;
+    text-align:center;
+    border:1px solid black;
+    border-radius: 20% 20%;
+    height: 25px;
+}
+
+.editing-btn{
+    display: flex;
+    flex-direction: row;
+}
+

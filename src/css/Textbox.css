@@ -1,13 +1,12 @@
 .editable-div {
-    border: 1px solid #ccc;
     background-color: #fff;
     padding: 5px;
     height: 100vh;
-    width: 52%;
+    width: 800px;
     margin: auto;
     padding-inline: 7rem;
     padding-block: 6rem;
-    border: 0px solid black;
+    border: 0px solid black!important;
   }
 
 

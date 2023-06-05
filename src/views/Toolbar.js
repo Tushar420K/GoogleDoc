@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './../css/Editor.css'
 
 import {
@@ -26,19 +26,16 @@ import {
   
 } from '@mui/icons-material';
 
-import { useState } from 'react';
 import ArrowDropDownOutlinedIcon from '@mui/icons-material/ArrowDropDownOutlined'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import ExpandLessOutlinedIcon from '@mui/icons-material/ExpandLessOutlined';
-import './../mapping/mapping'
 import { mappingObject } from './../mapping/mapping';
-
+import RemoveOutlinedIcon from '@mui/icons-material/RemoveOutlined';
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined';
 
 export default function Toolbar(props) {
 
     const {toolbarState,setToolbarState} = props;
-    const [values,setValues] = useState({
-    });
     
     const updateToolbarState = (id) => {
         document.execCommand(mappingObject[id], false, null);
@@ -56,11 +53,11 @@ export default function Toolbar(props) {
     <div className='toolbar-container'>
         <div className='toolbar-main'>
             <div className="container">
-                <UndoOutlined className='toolbar-btn' onClick={handleClick} id="undIcon" sx={{fontSize:'29px'}}/>
-                <RedoOutlined className='toolbar-btn' onClick={handleClick} id="redoIcon" sx={{fontSize:'29px'}}/>
-                <LocalPrintshopOutlined className='toolbar-btn' onClick={handleClick} id="printIcon" sx={{fontSize:'29px'}}/>
-                <SpellcheckOutlined className='toolbar-btn' onClick={handleClick} id="spellIcon" sx={{fontSize:'29px'}}/>
-                <ImagesearchRollerOutlined className='toolbar-btn' onClick={handleClick} id="imageIcon" sx={{fontSize:'29px'}}/>
+                <UndoOutlined className='toolbar-btn' onClick={handleClick} id="undIcon" sx={{fontSize:'31px'}}/>
+                <RedoOutlined className='toolbar-btn' onClick={handleClick} id="redoIcon" sx={{fontSize:'31px'}}/>
+                <LocalPrintshopOutlined className='toolbar-btn' onClick={handleClick} id="printIcon" sx={{fontSize:'31px'}}/>
+                <SpellcheckOutlined className='toolbar-btn' onClick={handleClick} id="spellIcon" sx={{fontSize:'31px'}}/>
+                <ImagesearchRollerOutlined className='toolbar-btn' onClick={handleClick} id="imageIcon" sx={{fontSize:'31px'}}/>
                 <button className='toolbar-btn' id='btn-down-1'>100%<ArrowDropDownOutlinedIcon sx={{fontSize:'20px'}}/></button>
             </div>
             <div className='vbr'></div>
@@ -79,36 +76,42 @@ export default function Toolbar(props) {
             </div>
             <div className='vbr'></div>
             <div className="container">
-                <FormatBoldOutlined className='toolbar-btn' id="boldIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatItalicOutlined className='toolbar-btn' id="italicIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatUnderlinedOutlined className='toolbar-btn' id="underlineIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatColorTextOutlined className='toolbar-btn' id="colorIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <BorderColorOutlined className='toolbar-btn' id="highlightIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
+                <RemoveOutlinedIcon className='toolbar-btn' id="minus" onClick={handleClick} sx={{fontSize:'23px'}}/>
+                <input className='fontsize' value ={12}/>
+                <AddOutlinedIcon className='toolbar-btn' id="plus" onClick={handleClick} sx={{fontSize:'23px'}}/>
             </div>
             <div className='vbr'></div>
             <div className="container">
-                <InsertLinkOutlined className='toolbar-btn' id="insertIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <AddCommentOutlined className='toolbar-btn' id="commentIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <ImageOutlined className='toolbar-btn' id="imageOutlineIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
+                <FormatBoldOutlined className='toolbar-btn' id="boldIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatItalicOutlined className='toolbar-btn' id="italicIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatUnderlinedOutlined className='toolbar-btn' id="underlineIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatColorTextOutlined className='toolbar-btn' id="colorIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <BorderColorOutlined className='toolbar-btn' id="highlightIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
             </div>
             <div className='vbr'></div>
             <div className="container">
-                <FormatAlignCenterOutlined className='toolbar-btn' id="alignIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatLineSpacingOutlined className='toolbar-btn' id="lineSpaceIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <ChecklistOutlined className='toolbar-btn' id="checkListIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatListBulletedOutlined className='toolbar-btn' id="bulletIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatListNumberedOutlined className='toolbar-btn' id="numberListIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatIndentDecreaseOutlined className='toolbar-btn' id="indentDecIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatIndentIncreaseOutlined className='toolbar-btn' id="indentIncIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
-                <FormatClearOutlined className='toolbar-btn' id="clearOutIcon" onClick={handleClick} sx={{fontSize:'29px'}}/>
+                <InsertLinkOutlined className='toolbar-btn' id="insertIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <AddCommentOutlined className='toolbar-btn' id="commentIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <ImageOutlined className='toolbar-btn' id="imageOutlineIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+            </div>
+            <div className='vbr'></div>
+            <div className="container">
+                <FormatAlignCenterOutlined className='toolbar-btn' id="alignIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatLineSpacingOutlined className='toolbar-btn' id="lineSpaceIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <ChecklistOutlined className='toolbar-btn' id="checkListIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatListBulletedOutlined className='toolbar-btn' id="bulletIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatListNumberedOutlined className='toolbar-btn' id="numberListIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatIndentDecreaseOutlined className='toolbar-btn' id="indentDecIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatIndentIncreaseOutlined className='toolbar-btn' id="indentIncIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
+                <FormatClearOutlined className='toolbar-btn' id="clearOutIcon" onClick={handleClick} sx={{fontSize:'31px'}}/>
             </div>
         </div>
         <div className='container-right'>
-            <div>
+            <div className='editing-btn'>
                 <EditOutlinedIcon/>
                 <p>Editing</p>
             </div>
-            <ExpandLessOutlinedIcon className='toolbar-btn' onClick={handleClick} sx={{fontSize:'29px'}}/>
+            <ExpandLessOutlinedIcon className='toolbar-btn' onClick={handleClick} sx={{fontSize:'31px'}}/>
         </div>
     </div>
   )
